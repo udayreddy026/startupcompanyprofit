@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Start-Up-Comapny-Profite</h2> <hr>
+    <form action="/result", method="POST">
+        {% csrf_token %}
+        <input class="form-control" type="text" placeholder="R&DSpend Ex:16872.00" aria-label="default input example" name="R&DSpend"> <br> 
+
+        <input class="form-control" type="text" placeholder="Administration Ex:17524.00" aria-label="default input example" name="Administration"> <br> 
+
+        <input class="form-control" type="text" placeholder="MarketingSpend Ex:54210.00" aria-label="default input example" name="MarketingSpend"> <br> 
+
+        <input class="form-control" type="text" placeholder="State_Florida Ex:0 or 1" aria-label="default input example" name="State_Florida"> <br> 
+
+        <input class="form-control" type="text" placeholder="State_NewYork Ex: 0 or 1" aria-label="default input example" name="State_NewYork"> <br> 
+
+        <button type="submit" class="btn btn-outline-success">Success</button>
+    </form>
+{% endblock content %}
+
+{% block res %}
+    <h2>Result</h2> <hr>
+    <h1>{{ res }}</h1>
+{% endblock res %}
